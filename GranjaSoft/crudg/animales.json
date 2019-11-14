@@ -1,0 +1,47 @@
+{
+	"model_name":"Animales",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"animales",
+    "fields": [	
+        {
+            "name": "animal_id",
+            "type": "bigint#unsigned"
+        },	
+        {
+            "name": "raza",
+            "type": "string"
+        },
+        {
+            "name": "tipo",
+            "type": "string"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "animal_id",
+            "references": "id",
+            "on": "nave",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "nave",
+            "type": "belongsTo",
+            "class": "App\\Models\\Nave"
+        }
+    ],
+    "validations": [
+        {
+            "field": "raza",
+            "rules": "required|min:5|max:20"
+        },
+		{
+            "field": "tipo",
+            "rules": "required|min:5|max:20"
+        }
+    ]
+	
+}

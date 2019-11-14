@@ -1,0 +1,47 @@
+{
+	"model_name":"Vacunas",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"vacunas",
+    "fields": [		
+        {
+            "name": "vacuna_id",
+            "type": "bigint#unsigned"
+        },
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "tipo",
+            "type": "string"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "vacuna_id",
+            "references": "id",
+            "on": "animales",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "animales",
+            "type": "belongsTo",
+            "class": "App\\Models\\Animales"
+        }
+    ],
+    "validations": [
+        {
+            "field": "name",
+            "rules": "required|min:5|max:20"
+        },
+		{
+            "field": "tipo",
+            "rules": "required|min:5|max:20"
+        }
+    ]
+	
+}
