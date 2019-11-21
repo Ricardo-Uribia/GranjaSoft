@@ -16,11 +16,7 @@
     ],
     "validations": [
         {
-            "field": "name",
-            "rules": "required|min:5|max:20"
-        },
-		{
-            "field": "tipo",
+            "field": "nombre",
             "rules": "required|min:5|max:20"
         }
     ]

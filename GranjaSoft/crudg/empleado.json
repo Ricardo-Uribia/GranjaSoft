@@ -43,7 +43,7 @@
     ],
     "validations": [
         {
-            "field": "name",
+            "field": "nombre",
             "rules": "required|min:5|max:20"
         },
 		{

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7a906923aeb9601c200f4e2a048ff2d",
+    "content-hash": "b8cab9ff9e00eecf96776e78041a6dba",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -3465,16 +3465,22 @@
     "packages-dev": [
         {
             "name": "appzcoder/crud-generator",
-            "version": "v3.0.8",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/CarlosUh/crud-generator.git",
-                "reference": "e086cdb6a9497ddb80c849626aa22ab1e379b4a4"
+                "url": "https://github.com/appzcoder/crud-generator.git",
+                "reference": "b66c400d704981849035a756b87f4ece459f7c80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appzcoder/crud-generator/zipball/b66c400d704981849035a756b87f4ece459f7c80",
+                "reference": "b66c400d704981849035a756b87f4ece459f7c80",
+                "shasum": ""
             },
             "require": {
-                "illuminate/support": "^5.3",
-                "laravelcollective/html": "^5.3",
-                "php": ">=5.6.4"
+                "illuminate/support": "^5.3|^6.0",
+                "laravelcollective/html": "^5.3|^6.0",
+                "php": ">=5.6.4|>=7.0"
             },
             "require-dev": {
                 "mockery/mockery": "^0.9.6",
@@ -3497,6 +3503,7 @@
                     "tests"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3509,13 +3516,13 @@
             ],
             "description": "Laravel CRUD Generator",
             "keywords": [
-                "api generator",
+                "API generator",
                 "crud",
                 "crud generator",
                 "laravel",
                 "laravel crud generator"
             ],
-            "time": "2018-12-16T19:10:14+00:00"
+            "time": "2019-09-21T07:05:47+00:00"
         },
         {
             "name": "beyondcode/laravel-dump-server",
