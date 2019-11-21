@@ -14,14 +14,6 @@
             "type": "string"
         }
     ],
-    "foreign_keys": [
-        {
-            "column": "id",
-            "references": "id",
-            "on": "nave",
-            "onDelete": "cascade"
-        }
-    ],
     "validations": [
         {
             "field": "name",
