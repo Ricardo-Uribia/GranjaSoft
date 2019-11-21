@@ -25,3 +25,6 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::resource('granja', 'GranjaController');
+Route::resource('empleado', 'EmpleadoController');
+Route::resource('animales', 'AnimalesController');
+Route::resource('vacunas', 'VacunasController');
