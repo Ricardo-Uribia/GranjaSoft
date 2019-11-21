@@ -28,3 +28,6 @@ Route::resource('granja', 'GranjaController');
 Route::resource('empleado', 'EmpleadoController');
 Route::resource('animales', 'AnimalesController');
 Route::resource('vacunas', 'VacunasController');
+Route::resource('actividades', 'ActividadesController');
+Route::resource('nave', 'NaveController');
+Route::resource('nave', 'NaveController');
