@@ -19,10 +19,6 @@
             "type": "string"
         },
         {
-            "name": "actividades",
-            "type": "string"
-        },
-        {
             "name": "granja_id",
             "type": "integer#unsigned"
         }

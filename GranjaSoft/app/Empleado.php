@@ -25,7 +25,7 @@ class Empleado extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'edad', 'puesto', 'actividades', 'granja_id'];
+    protected $fillable = ['nombre', 'edad', 'puesto', 'granja_id'];
 
     public function granjas()
     {

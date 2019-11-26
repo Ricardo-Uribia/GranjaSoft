@@ -27,8 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::resource('granjas', 'GranjasController');
-Route::resource('empleados', 'EmpleadosController');
-Route::resource('actividades', 'ActividadesController');
-Route::resource('naves', 'NavesController');
-Route::resource('animales', 'AnimalesController');
-Route::resource('vacunas', 'VacunasController');
+Route::resource('empleados', 'GranjasController');
+Route::resource('naves', 'GranjasController');
+Route::resource('vacunas', 'GranjasController');
+Route::resource('actividades', 'GranjasController');
+Route::resource('animales', 'GranjasController');
