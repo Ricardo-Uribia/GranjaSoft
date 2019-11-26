@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Actividade;
+use App\Actividad;
 use Illuminate\Http\Request;
 
 class ActividadesController extends Controller
@@ -21,16 +21,13 @@ class ActividadesController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $actividades = Actividade::where('activida_id', 'LIKE', "%$keyword%")
-                ->orWhere('nombre', 'LIKE', "%$keyword%")
-                ->orWhere('empleado', 'LIKE', "%$keyword%")
-                ->orWhere('actividad', 'LIKE', "%$keyword%")
-                ->orWhere('dia', 'LIKE', "%$keyword%")
-                ->orWhere('hora_inicio', 'LIKE', "%$keyword%")
-                ->orWhere('hora_finaliza', 'LIKE', "%$keyword%")
+            $actividades = Actividad::where('empleado_id', 'LIKE', "%$keyword%")
+                ->orWhere('tipo_de_tarea', 'LIKE', "%$keyword%")
+                ->orWhere('fecha_de_inicio', 'LIKE', "%$keyword%")
+                ->orWhere('fecha_de_finalizacion', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $actividades = Actividade::latest()->paginate($perPage);
+            $actividades = Actividad::latest()->paginate($perPage);
         }
 
         return view('actividades.index', compact('actividades'));
@@ -56,14 +53,13 @@ class ActividadesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'empleado' => 'required|min:5|max:20',
-			'actividad' => 'required|min:5|max:50'
+			'tipo_de_tarea' => 'required|min:1|max:50'
 		]);
         $requestData = $request->all();
         
-        Actividade::create($requestData);
+        Actividad::create($requestData);
 
-        return redirect('actividades')->with('flash_message', 'Actividade added!');
+        return redirect('actividades')->with('flash_message', 'Actividad added!');
     }
 
     /**
@@ -75,7 +71,7 @@ class ActividadesController extends Controller
      */
     public function show($id)
     {
-        $actividade = Actividade::findOrFail($id);
+        $actividade = Actividad::findOrFail($id);
 
         return view('actividades.show', compact('actividade'));
     }
@@ -89,7 +85,7 @@ class ActividadesController extends Controller
      */
     public function edit($id)
     {
-        $actividade = Actividade::findOrFail($id);
+        $actividade = Actividad::findOrFail($id);
 
         return view('actividades.edit', compact('actividade'));
     }
@@ -105,15 +101,14 @@ class ActividadesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'empleado' => 'required|min:5|max:20',
-			'actividad' => 'required|min:5|max:50'
+			'tipo_de_tarea' => 'required|min:1|max:50'
 		]);
         $requestData = $request->all();
         
-        $actividade = Actividade::findOrFail($id);
+        $actividade = Actividad::findOrFail($id);
         $actividade->update($requestData);
 
-        return redirect('actividades')->with('flash_message', 'Actividade updated!');
+        return redirect('actividades')->with('flash_message', 'Actividad updated!');
     }
 
     /**
@@ -125,8 +120,8 @@ class ActividadesController extends Controller
      */
     public function destroy($id)
     {
-        Actividade::destroy($id);
+        Actividad::destroy($id);
 
-        return redirect('actividades')->with('flash_message', 'Actividade deleted!');
+        return redirect('actividades')->with('flash_message', 'Actividad deleted!');
     }
 }

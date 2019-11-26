@@ -24,10 +24,11 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
 });
 
-Route::resource('granja', 'GranjaController');
-Route::resource('empleado', 'EmpleadoController');
+
+
+Route::resource('granjas', 'GranjasController');
+Route::resource('empleados', 'EmpleadosController');
+Route::resource('actividades', 'ActividadesController');
+Route::resource('naves', 'NavesController');
 Route::resource('animales', 'AnimalesController');
 Route::resource('vacunas', 'VacunasController');
-Route::resource('actividades', 'ActividadesController');
-Route::resource('nave', 'NaveController');
-Route::resource('nave', 'NaveController');

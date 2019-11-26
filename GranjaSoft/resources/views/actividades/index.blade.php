@@ -30,21 +30,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Activida Id</th><th>Nombre</th><th>Empleado</th><th>Actividad</th><th>Dia</th><th>Hora Inicio </th><th>H.Finaliza</th><th>Actions</th>
+                                        <th>#</th><th>Empleado Id</th><th>Tipo De Tarea</th><th>Fecha De Inicio</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($actividades as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->activida_id }}
-                                        </td><td>{{ $item->nombre }}</td>
-                                        <td>{{ $item->empleado }}</td>
-                                        <td>{{ $item->actividad }}</td>
-                                        <td>{{ $item->dia }}</td>
-                                        <td>{{ $item->hora_inicio }}</td>
-                                        <td>{{ $item->hora_finaliza }}</td>
-
+                                        <td>{{ $item->empleado_id }}</td><td>{{ $item->tipo_de_tarea }}</td><td>{{ $item->fecha_de_inicio }}</td>
                                         <td>
                                             <a href="{{ url('/actividades/' . $item->id) }}" title="View Actividade"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/actividades/' . $item->id . '/edit') }}" title="Edit Actividade"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

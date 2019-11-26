@@ -25,11 +25,15 @@ class Empleado extends Model
      *
      * @var array
      */
-    protected $fillable = ['empleado_id', 'nombre', 'edad', 'puesto', 'actividades'];
+    protected $fillable = ['nombre', 'edad', 'puesto', 'actividades', 'granja_id'];
 
-    public function granja()
+    public function granjas()
     {
-        return $this->belongsTo('App\Models\Granja');
+        return $this->belongsTo('App\Granja');
+    }
+    public function actividades()
+    {
+        return $this->hasMany('App\Actividades');
     }
     
 }

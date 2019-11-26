@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $animale->id }}</td>
                                     </tr>
-                                    <tr><th> Animal Id </th><td> {{ $animale->animal_id }} </td></tr><tr><th> Raza </th><td> {{ $animale->raza }} </td></tr><tr><th> Tipo </th><td> {{ $animale->tipo }} </td></tr>
+                                    <tr><th> Raza </th><td> {{ $animale->raza }} </td></tr><tr><th> Tipo </th><td> {{ $animale->tipo }} </td></tr><tr><th> Animal Id </th><td> {{ $animale->animal_id }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

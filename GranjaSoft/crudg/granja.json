@@ -3,17 +3,27 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"granja",
+	"table":"granjas",
     "fields": [		
-        {
-            "name": "granja_id",
-            "type": "string"
-        },
+        
         {
             "name": "nombre",
             "type": "string"
+        },
+        {
+            "name": "tipo",
+            "type": "string"
         }
+        ],    
+    "relationships": [
+        {
+            "name": "empleados",
+            "type": "hasMany",
+            "class": "App\\Empleado"
+        }
+   
     ],
+    
     "validations": [
         {
             "field": "nombre",

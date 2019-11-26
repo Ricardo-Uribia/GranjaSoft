@@ -30,14 +30,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Animal Id</th><th>Raza</th><th>Tipo</th><th>Actions</th>
+                                        <th>#</th><th>Raza</th><th>Tipo</th><th>Animal Id</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($animales as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->animal_id }}</td><td>{{ $item->raza }}</td><td>{{ $item->tipo }}</td>
+                                        <td>{{ $item->raza }}</td><td>{{ $item->tipo }}</td><td>{{ $item->animal_id }}</td>
                                         <td>
                                             <a href="{{ url('/animales/' . $item->id) }}" title="View Animale"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/animales/' . $item->id . '/edit') }}" title="Edit Animale"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

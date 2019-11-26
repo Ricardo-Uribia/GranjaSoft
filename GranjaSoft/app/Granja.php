@@ -25,7 +25,11 @@ class Granja extends Model
      *
      * @var array
      */
-    protected $fillable = ['granja_id', 'nombre'];
+    protected $fillable = ['nombre', 'tipo'];
 
+    public function empleados()
+    {
+        return $this->hasMany('App\Empleado');
+    }
     
 }

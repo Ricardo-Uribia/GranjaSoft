@@ -25,11 +25,15 @@ class Nave extends Model
      *
      * @var array
      */
-    protected $fillable = ['nave_id', 'secciones'];
+    protected $fillable = ['nave_id', 'secciones', 'tipo_de_nave'];
 
-    public function granja()
+    public function granjas()
     {
         return $this->belongsTo('App\Models\Granja');
+    }
+    public function empleados()
+    {
+        return $this->hasMany('App\Models\Granja');
     }
     
 }

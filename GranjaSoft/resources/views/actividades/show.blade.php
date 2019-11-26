@@ -27,10 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $actividade->id }}</td>
                                     </tr>
-                                    <tr><th> Activida Id </th><td> {{ $actividade->activida_id }} </td></tr><tr><th> Nombre </th><td> {{ $actividade->nombre }} </td></tr><tr><th> Empleado </th><td> {{ $actividade->empleado }} </td></tr><tr><th> Actividad </th><td> {{ $actividade->actividad }} </td>
-                                    <tr><th> Dia </th><td> {{ $actividade->dia }} </td>
-                                    <tr><th> Hora Inicio </th><td> {{ $actividade->hora_inicio }} </td>
-                                    <tr><th> Hora Finaliza </th><td> {{ $actividade->hora_finaliza }} </td>   
+                                    <tr><th> Empleado Id </th><td> {{ $actividade->empleado_id }} </td></tr><tr><th> Tipo De Tarea </th><td> {{ $actividade->tipo_de_tarea }} </td></tr><tr><th> Fecha De Inicio </th><td> {{ $actividade->fecha_de_inicio }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

@@ -3,29 +3,38 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"nave",
+	"table":"naves",
     "fields": [		
         {
             "name": "nave_id",
-            "type": "bigint#unsigned"
+            "type": "integer#unsigned"
         },
         {
             "name": "secciones",
             "type": "integer"
+        },
+        {
+            "name": "tipo_de_nave",
+            "type": "string"
         }
     ],
     "foreign_keys": [
         {
             "column": "nave_id",
             "references": "id",
-            "on": "granja",
+            "on": "granjas",
             "onDelete": "cascade"
         }
     ],
     "relationships": [
         {
-            "name": "granja",
+            "name": "granjas",
             "type": "belongsTo",
+            "class": "App\\Models\\Granja"
+        },
+        {
+            "name": "empleados",
+            "type": "hasMany",
             "class": "App\\Models\\Granja"
         }
     ],

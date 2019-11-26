@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Vacuna;
+use App\Vacunas;
 use Illuminate\Http\Request;
 
 class VacunasController extends Controller
@@ -21,12 +21,12 @@ class VacunasController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $vacunas = Vacuna::where('vacuna_id', 'LIKE', "%$keyword%")
+            $vacunas = Vacunas::where('vacuna_id', 'LIKE', "%$keyword%")
                 ->orWhere('nombre', 'LIKE', "%$keyword%")
                 ->orWhere('tipo', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $vacunas = Vacuna::latest()->paginate($perPage);
+            $vacunas = Vacunas::latest()->paginate($perPage);
         }
 
         return view('vacunas.index', compact('vacunas'));
@@ -57,9 +57,9 @@ class VacunasController extends Controller
 		]);
         $requestData = $request->all();
         
-        Vacuna::create($requestData);
+        Vacunas::create($requestData);
 
-        return redirect('vacunas')->with('flash_message', 'Vacuna added!');
+        return redirect('vacunas')->with('flash_message', 'Vacunas added!');
     }
 
     /**
@@ -71,7 +71,7 @@ class VacunasController extends Controller
      */
     public function show($id)
     {
-        $vacuna = Vacuna::findOrFail($id);
+        $vacuna = Vacunas::findOrFail($id);
 
         return view('vacunas.show', compact('vacuna'));
     }
@@ -85,7 +85,7 @@ class VacunasController extends Controller
      */
     public function edit($id)
     {
-        $vacuna = Vacuna::findOrFail($id);
+        $vacuna = Vacunas::findOrFail($id);
 
         return view('vacunas.edit', compact('vacuna'));
     }
@@ -106,10 +106,10 @@ class VacunasController extends Controller
 		]);
         $requestData = $request->all();
         
-        $vacuna = Vacuna::findOrFail($id);
+        $vacuna = Vacunas::findOrFail($id);
         $vacuna->update($requestData);
 
-        return redirect('vacunas')->with('flash_message', 'Vacuna updated!');
+        return redirect('vacunas')->with('flash_message', 'Vacunas updated!');
     }
 
     /**
@@ -121,8 +121,8 @@ class VacunasController extends Controller
      */
     public function destroy($id)
     {
-        Vacuna::destroy($id);
+        Vacunas::destroy($id);
 
-        return redirect('vacunas')->with('flash_message', 'Vacuna deleted!');
+        return redirect('vacunas')->with('flash_message', 'Vacunas deleted!');
     }
 }

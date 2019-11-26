@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Animale;
+use App\Animal;
 use Illuminate\Http\Request;
 
 class AnimalesController extends Controller
@@ -21,12 +21,12 @@ class AnimalesController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $animales = Animale::where('animal_id', 'LIKE', "%$keyword%")
-                ->orWhere('raza', 'LIKE', "%$keyword%")
+            $animales = Animal::where('raza', 'LIKE', "%$keyword%")
                 ->orWhere('tipo', 'LIKE', "%$keyword%")
+                ->orWhere('animal_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $animales = Animale::latest()->paginate($perPage);
+            $animales = Animal::latest()->paginate($perPage);
         }
 
         return view('animales.index', compact('animales'));
@@ -57,9 +57,9 @@ class AnimalesController extends Controller
 		]);
         $requestData = $request->all();
         
-        Animale::create($requestData);
+        Animal::create($requestData);
 
-        return redirect('animales')->with('flash_message', 'Animale added!');
+        return redirect('animales')->with('flash_message', 'Animal added!');
     }
 
     /**
@@ -71,7 +71,7 @@ class AnimalesController extends Controller
      */
     public function show($id)
     {
-        $animale = Animale::findOrFail($id);
+        $animale = Animal::findOrFail($id);
 
         return view('animales.show', compact('animale'));
     }
@@ -85,7 +85,7 @@ class AnimalesController extends Controller
      */
     public function edit($id)
     {
-        $animale = Animale::findOrFail($id);
+        $animale = Animal::findOrFail($id);
 
         return view('animales.edit', compact('animale'));
     }
@@ -106,10 +106,10 @@ class AnimalesController extends Controller
 		]);
         $requestData = $request->all();
         
-        $animale = Animale::findOrFail($id);
+        $animale = Animal::findOrFail($id);
         $animale->update($requestData);
 
-        return redirect('animales')->with('flash_message', 'Animale updated!');
+        return redirect('animales')->with('flash_message', 'Animal updated!');
     }
 
     /**
@@ -121,8 +121,8 @@ class AnimalesController extends Controller
      */
     public function destroy($id)
     {
-        Animale::destroy($id);
+        Animal::destroy($id);
 
-        return redirect('animales')->with('flash_message', 'Animale deleted!');
+        return redirect('animales')->with('flash_message', 'Animal deleted!');
     }
 }
