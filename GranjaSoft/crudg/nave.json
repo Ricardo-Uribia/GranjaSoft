@@ -30,12 +30,12 @@
         {
             "name": "granjas",
             "type": "belongsTo",
-            "class": "App\\Models\\Granja"
+            "class": "App\\Granja"
         },
         {
             "name": "empleados",
             "type": "hasMany",
-            "class": "App\\Models\\Granja"
+            "class": "App\\Granja"
         }
     ],
     "validations": [

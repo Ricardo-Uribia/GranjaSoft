@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Nave extends Model
+class Actividad extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'naves';
+    protected $table = 'actividades';
 
     /**
     * The database primary key value.
@@ -25,15 +25,11 @@ class Nave extends Model
      *
      * @var array
      */
-    protected $fillable = ['nave_id', 'secciones', 'tipo_de_nave'];
+    protected $fillable = ['empleado_id', 'tipo_de_tarea', 'fecha_de_inicio', 'fecha_de_finalizacion'];
 
-    public function granjas()
-    {
-        return $this->belongsTo('App\Granja');
-    }
     public function empleados()
     {
-        return $this->hasMany('App\Granja');
+        return $this->belongsTo('App\Empleado');
     }
     
 }

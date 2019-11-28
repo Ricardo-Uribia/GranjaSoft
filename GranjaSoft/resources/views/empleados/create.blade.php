@@ -7,9 +7,9 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Create New Animales</div>
+                    <div class="card-header">Create New Empleado</div>
                     <div class="card-body">
-                        <a href="{{ url('/animales') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/empleados') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -21,10 +21,10 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/animales') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/empleados') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('animales.form', ['formMode' => 'create'])
+                            @include ('empleados.form', ['formMode' => 'create'])
 
                         </form>
 

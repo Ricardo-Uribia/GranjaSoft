@@ -1,0 +1,54 @@
+{
+	"model_name":"Actividad",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"actividades",
+    "fields": [		
+        {
+            "name": "empleado_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "tipo_de_tarea",
+            "type": "select",
+            "options": {
+                "opcion1": "Limpieza",
+                "opcion2": "Cuidado",
+                "opcion3": "Alimentacion",
+                "opcion4": "Mantenimiento",
+                "opcion5": "Vacunacion"
+            }
+        },
+        {
+            "name": "fecha_de_inicio",
+            "type": "date"
+        },
+        {
+            "name": "fecha_de_finalizacion",
+            "type": "date"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "empleado_id",
+            "references": "id",
+            "on": "empleados",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "empleados",
+            "type": "belongsTo",
+            "class": "App\\Empleado"
+        }
+    ],
+    "validations": [
+        {
+            "field": "tipo_de_tarea",
+            "rules": "required|min:1|max:50"
+        }
+    ]
+	
+}
