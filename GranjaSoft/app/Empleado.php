@@ -27,7 +27,7 @@ class Empleado extends Model
      */
     protected $fillable = ['nombre', 'edad', 'puesto', 'granja_id'];
 
-    public function granjas()
+    public function granja()
     {
         return $this->belongsTo('App\Granja');
     }

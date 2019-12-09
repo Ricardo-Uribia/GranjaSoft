@@ -18,6 +18,7 @@ class CreateNavesTable extends Migration
             $table->integer('nave_id')->unsigned();
             $table->integer('secciones')->nullable();
             $table->string('tipo_de_nave')->nullable();
+            $table->string('status')->nullable();
             $table->foreign('nave_id')->references('id')->on('granjas')->onDelete('cascade')->onUpdate('cascade');
             });
     }

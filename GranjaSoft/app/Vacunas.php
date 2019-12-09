@@ -25,7 +25,7 @@ class Vacunas extends Model
      *
      * @var array
      */
-    protected $fillable = ['vacuna_id', 'nombre', 'tipo'];
+    protected $fillable = ['vacuna_id', 'nombre', 'tipo', 'caducidad'];
 
     public function animales()
     {

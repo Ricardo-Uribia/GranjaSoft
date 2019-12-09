@@ -13,6 +13,11 @@
     <input class="form-control" name="tipo_de_nave" type="text" id="tipo_de_nave" value="{{ isset($nafe->tipo_de_nave) ? $nafe->tipo_de_nave : ''}}" >
     {!! $errors->first('tipo_de_nave', '<p class="help-block">:message</p>') !!}
 </div>
+<div class="form-group {{ $errors->has('status') ? 'has-error' : ''}}">
+    <label for="status" class="control-label">{{ 'Status' }}</label>
+    <input class="form-control" name="status" type="text" id="status" value="{{ isset($nafe->status) ? $nafe->status : ''}}" >
+    {!! $errors->first('status', '<p class="help-block">:message</p>') !!}
+</div>
 
 
 <div class="form-group">

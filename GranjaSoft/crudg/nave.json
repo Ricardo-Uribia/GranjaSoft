@@ -16,6 +16,10 @@
         {
             "name": "tipo_de_nave",
             "type": "string"
+        },
+        {
+            "name": "status",
+            "type": "string"
         }
     ],
     "foreign_keys": [
