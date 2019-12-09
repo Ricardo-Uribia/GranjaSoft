@@ -23,3 +23,5 @@ Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_api_routes
 });
+
+route::post('/V1/IRegistroEmpleados/registro/{nombre}/{edad}/{puesto}/{granja_id}', 'Services\RegistroEmpleadosService@registro');
