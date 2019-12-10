@@ -6,17 +6,19 @@ use App\Contracts\IOperaciones;
 use App\Contracts\IProductSearchable;
 use Illuminate\Support\Facades\DB;
 
+
 class VacunasVencidasService 	
 	extends Controller
 	implements IVacunasVencidas{
 
-    public function mostrar(Request $mes1, $mes2 ){
+    public function mostrar(Request $mes ){
 
-        if ($mes1 && $mes2 ) {
-            //Hace la busqueda por medio de las siguientes variables
-           
-            $inventario=Vacunas::between('nombre', $mes1, $mes2)->get();
-            return array('vacuna'=>$vacunas);
+    	//Array de todos los registros
+        $mes = DB::table('vacunas')->get();
+        echo $mes[0]->id;
+        //Array unico del primero en la columna 
+        $mes = DB::table('vacunas')->first();
+        echo $mes->id;
 
 
  ?>

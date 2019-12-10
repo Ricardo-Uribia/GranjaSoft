@@ -25,7 +25,7 @@ class Nave extends Model
      *
      * @var array
      */
-    protected $fillable = ['nave_id', 'secciones', 'tipo_de_nave'];
+    protected $fillable = ['nave_id', 'secciones', 'tipo_de_nave', 'status'];
 
     public function granjas()
     {

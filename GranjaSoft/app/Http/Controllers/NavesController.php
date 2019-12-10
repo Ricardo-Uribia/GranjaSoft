@@ -24,6 +24,7 @@ class NavesController extends Controller
             $naves = Nave::where('nave_id', 'LIKE', "%$keyword%")
                 ->orWhere('secciones', 'LIKE', "%$keyword%")
                 ->orWhere('tipo_de_nave', 'LIKE', "%$keyword%")
+                ->orWhere('status', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $naves = Nave::latest()->paginate($perPage);

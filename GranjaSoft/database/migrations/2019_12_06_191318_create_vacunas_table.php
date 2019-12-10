@@ -18,6 +18,7 @@ class CreateVacunasTable extends Migration
             $table->integer('vacuna_id')->unsigned();
             $table->string('nombre')->nullable();
             $table->string('tipo')->nullable();
+            $table->date('caducidad')->nullable();
             $table->foreign('vacuna_id')->references('id')->on('animales')->onDelete('cascade')->onUpdate('cascade');
             });
     }

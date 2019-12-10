@@ -16,6 +16,10 @@
         {
             "name": "tipo",
             "type": "string"
+        },
+         {
+            "name": "caducidad",
+            "type": "date"
         }
     ],
     "foreign_keys": [

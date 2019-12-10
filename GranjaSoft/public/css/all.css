@@ -141,7 +141,7 @@
   height: 35px;
 }
 .skin-blue .sidebar-form input[type="text"] {
-  color: #666;
+  color: #000000;
   border-top-left-radius: 2px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -156,7 +156,7 @@
   border-left-color: #fff;
 }
 .skin-blue .sidebar-form .btn {
-  color: #999;
+  color: #000000;
   border-top-left-radius: 0;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;

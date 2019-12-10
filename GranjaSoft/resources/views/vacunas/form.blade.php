@@ -13,6 +13,11 @@
     <input class="form-control" name="tipo" type="text" id="tipo" value="{{ isset($vacuna->tipo) ? $vacuna->tipo : ''}}" required>
     {!! $errors->first('tipo', '<p class="help-block">:message</p>') !!}
 </div>
+<div class="form-group {{ $errors->has('caducidad') ? 'has-error' : ''}}">
+    <label for="caducidad" class="control-label">{{ 'Caducidad' }}</label>
+    <input class="form-control" name="caducidad" type="date" id="caducidad" value="{{ isset($vacuna->caducidad) ? $vacuna->caducidad : ''}}" >
+    {!! $errors->first('caducidad', '<p class="help-block">:message</p>') !!}
+</div>
 
 
 <div class="form-group">

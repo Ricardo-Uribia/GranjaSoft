@@ -24,6 +24,7 @@ class VacunasController extends Controller
             $vacunas = Vacunas::where('vacuna_id', 'LIKE', "%$keyword%")
                 ->orWhere('nombre', 'LIKE', "%$keyword%")
                 ->orWhere('tipo', 'LIKE', "%$keyword%")
+                ->orWhere('caducidad', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $vacunas = Vacunas::latest()->paginate($perPage);

@@ -27,7 +27,7 @@ class Actividad extends Model
      */
     protected $fillable = ['empleado_id', 'tipo_de_tarea', 'fecha_de_inicio', 'fecha_de_finalizacion'];
 
-    public function empleados()
+    public function empleado()
     {
         return $this->belongsTo('App\Empleado');
     }
